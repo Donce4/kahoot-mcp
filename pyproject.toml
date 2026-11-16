@@ -1,0 +1,32 @@
+[project]
+name = "kahoot-answer-bot"
+version = "1.0.0"
+description = "Kahoot answer bot with an MCP server for AI agents"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+authors = [{ name = "Donce4", email = "januskeviciusdonatas0@gmail.com" }]
+dependencies = [
+    "mcp>=2.0",
+    "requests>=2.20.0",
+    "py-mini-racer==0.6.0",
+    "colorama==0.4.6",
+    "aiocometd",
+]
+
+[project.scripts]
+kahoot-bot = "kahoot_core.cli:main"
+kahoot-mcp = "kahoot_mcp.server:main"
+
+[tool.uv.sources]
+aiocometd = { path = "vendor/aiocometd" }
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["kahoot_core", "kahoot_mcp"]
+
+[tool.hatch.build.targets.sdist]
+include = ["kahoot_core", "kahoot_mcp", "vendor", "kbot", "requirements.txt"]

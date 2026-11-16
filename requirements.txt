@@ -1,0 +1,6 @@
+requests>=2.20.0
+### aiocometd is vendored and patched for Python 3.10+ (see vendor/README.md)
+./vendor/aiocometd
+py_mini_racer==0.6.0
+colorama==0.4.6
+mcp>=2.0

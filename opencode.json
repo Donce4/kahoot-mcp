@@ -1,0 +1,21 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "servers": {
+      "kahoot": {
+        "type": "local",
+        "command": [
+          "/home/donce/Projects/kahoot-answer-bot/.venv/bin/python",
+          "-m",
+          "kahoot_mcp"
+        ],
+        "environment": {
+          "KAHOOT_EMAIL": "{env:KAHOOT_EMAIL}",
+          "KAHOOT_PASSWORD": "{env:KAHOOT_PASSWORD}",
+          "KAHOOT_DEFAULT_NICKNAME": "{env:KAHOOT_DEFAULT_NICKNAME}",
+          "KAHOOT_DEBUG_RAW": "1"
+        }
+      }
+    }
+  }
+}
